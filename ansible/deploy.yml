@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: apply backend
-      shell: kubectl apply -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/backend.yml
+      shell: kubectl apply -f /home/ashutosh/Desktop/deployment/kubernetes/backend.yml
 
     - name: apply frontend
-      shell: kubectl apply -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/frontend.yml
+      shell: kubectl apply -f /home/ashutosh/Desktop/deployment/kubernetes/frontend.yml

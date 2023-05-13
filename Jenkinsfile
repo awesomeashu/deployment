@@ -47,7 +47,9 @@ pipeline {
 
         stage('Deploy application using Ansible') {
             steps {
-                sh " cd /home/aryan/Desktop/Placement/Spe_Major_deploy/ansible && ansible-playbook -i inventory deploy.yml"
+                // sh "ansible-playbook -i /home/ashutosh/Desktop/deployment/kubernetes/inventory /home/ashutosh/Desktop/deployment/kubernetes/deploy.yml"
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible/inventory',
+                 playbook: 'ansible/deploy.yml', sudoUser: null
             }
         }
     }
