@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME=''
-        KUBECONFIG='/home/aryan/Desktop/Placement/Spe_Major_deploy/auth.yml'
     }
 
     stages {
@@ -47,10 +46,10 @@ pipeline {
 
         stage('Deploy application using Ansible') {
             steps {
-                // sh "ansible-playbook -i /home/ashutosh/Desktop/deployment/kubernetes/inventory /home/ashutosh/Desktop/deployment/kubernetes/deploy.yml"
-                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible/inventory',
-                 playbook: 'ansible/deploy.yml', sudoUser: null
+                sh "ansible-playbook /home/ashutosh/Desktop/deployment/ansible/deploy.yml -i /home/ashutosh/Desktop/deployment/ansible/inventory"
+                //ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible/inventory',
+                 //playbook: 'ansible/deploy.yml', sudoUser: null
             }
-        }
+        } 
     }
 }
