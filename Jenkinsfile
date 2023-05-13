@@ -46,7 +46,7 @@ pipeline {
 
         stage('Deploy application using Ansible') {
             steps {
-                sh "ansible-playbook /home/ashutosh/Desktop/deployment/ansible/deploy.yml -i /home/ashutosh/Desktop/deployment/ansible/inventory"
+                sh "ansible-playbook -i /home/ashutosh/Desktop/deployment/ansible/inventory /home/ashutosh/Desktop/deployment/ansible/deploy.yml"
                 //ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible/inventory',
                  //playbook: 'ansible/deploy.yml', sudoUser: null
             }
