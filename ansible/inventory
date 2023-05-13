@@ -1,0 +1,2 @@
+[localhost]
+ashutosh ansible_connection=local

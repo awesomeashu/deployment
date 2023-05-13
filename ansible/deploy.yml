@@ -1,0 +1,9 @@
+---
+- name: Deploy placement app
+  hosts: all
+  tasks:
+    - name: apply backend
+      shell: kubectl apply -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/backend.yml
+
+    - name: apply frontend
+      shell: kubectl apply -f /home/aryan/Desktop/Placement/Spe_Major_deploy/kubernetes/frontend.yml
