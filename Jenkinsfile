@@ -11,7 +11,7 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', 
                           branches: [[name: '*/master']], 
-                          userRemoteConfigs: [[url: 'https://github.com/aryan127/Spe_Major_deploy.git']]])
+                          userRemoteConfigs: [[url: 'https://github.com/awesomeashu/deployment.git']]])
             }
         }
 
@@ -19,11 +19,11 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', 
                           branches: [[name: '*/master']], 
-                          userRemoteConfigs: [[url: 'https://github.com/aryan127/placement.git']]])
+                          userRemoteConfigs: [[url: 'https://github.com/awesomeashu/enquiryclient-master.git']]])
 
                 script {
-                    IMAGE_NAME=docker.build "aryan1207/spe_frontend"
-                    docker.withRegistry('','78893db7-6f42-48c4-8959-fe97266d632a'){
+                    IMAGE_NAME=docker.build "ashutosh024/spe_frontend"
+                    docker.withRegistry('','docker-hub'){
                       IMAGE_NAME.push()
                     }
                 }
@@ -34,11 +34,11 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', 
                           branches: [[name: '*/master']], 
-                          userRemoteConfigs: [[url: 'https://github.com/aryan127/placement-backend.git']]])
+                          userRemoteConfigs: [[url: 'https://github.com/awesomeashu/EnquiryServer-master.git']]])
 
                 script {
-                    IMAGE_NAME=docker.build "aryan1207/spe_backend"
-                    docker.withRegistry('','78893db7-6f42-48c4-8959-fe97266d632a'){
+                    IMAGE_NAME=docker.build "ashutosh024/spe_backend"
+                    docker.withRegistry('','docker-hub'){
                       IMAGE_NAME.push()
                     }
                 }
