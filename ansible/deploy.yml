@@ -2,6 +2,12 @@
 - name: Deploy placement app
   hosts: all
   tasks:
+    - name: delete previous backend yml
+      shell: kubectl delete -f /home/ashutosh/Desktop/deployment/kubernetes/backend.yml
+
+    - name: delete previous frontend yml
+      shell: kubectl delete -f /home/ashutosh/Desktop/deployment/kubernetes/frontend.yml
+
     - name: apply backend
       shell: kubectl apply -f /home/ashutosh/Desktop/deployment/kubernetes/backend.yml
 
