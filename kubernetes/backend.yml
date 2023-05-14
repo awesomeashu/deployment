@@ -20,7 +20,7 @@ spec:
               containerPort: 2000
           env:
             - name: MONGO
-              value: "mongodb+srv://ashutosh024:aventador123@cluster0.fj7cclv.mongodb.net/?retryWrites=true&w=majority"
+              value: "mongodb+srv://ashutosh024:aventador123@cluster0.fj7cclv.mongodb.net/test?retryWrites=true&w=majority"
             - name: PORT
               value: "2000"
 
